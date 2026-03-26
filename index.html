@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lippy AI - Dental Receptionist Sandbox</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        /* --- Dental Theme Variables (Teals & Soft Blues) --- */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --primary: 184 75% 39%; /* Teal-600 */
+            --primary-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- Animations (Kept from original) --- */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideInLeft { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideInRight { from { transform: translateX(30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        
+        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        .animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
+        .animate-slide-right { animation: slideInRight 0.6s ease-out forwards; }
+        
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .button-hover:hover { transform: translateY(-2px); }
+
+        /* --- Text Rotator Animation (Updated for Dental) --- */
+        .rotating-text-wrapper { display: inline-block; height: 5rem; overflow: hidden; vertical-align: bottom; line-height: 1.2; }
+        .rotating-text-inner { animation: rotateWords 9s infinite; }
+        .rotating-word { display: block; line-height: 5rem; }
+        @keyframes rotateWords {
+            0%   { transform: translateY(0); } 
+            22%  { transform: translateY(0); }
+            25%  { transform: translateY(-5rem); } /* New Patients */
+            47%  { transform: translateY(-5rem); }
+            50%  { transform: translateY(-10rem); } /* Production */
+            72%  { transform: translateY(-10rem); }
+            75%  { transform: translateY(-15rem); } /* Missed Calls */
+            97%  { transform: translateY(-15rem); }
+            99.99% { transform: translateY(-15rem); }
+            100% { transform: translateY(0); } 
+        }
+
+        /* --- HubSpot Tracking Code Placeholder --- */
+        /* You will add your HubSpot script in the head below */
+    </style>
+
+    </head>
+<body class="bg-gray-50 text-gray-900">
+
+    <nav class="bg-white shadow-sm fixed top-0 left-0 right-0 z-40">
+        <div class="container mx-auto max-w-6xl px-6">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold text-teal-600">Lippy AI Dental</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white pt-20">
+        <div class="container mx-auto max-w-6xl px-6 py-24 lg:py-32">
+            <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
+
+                <div class="hero-content animate-slide-left lg:col-span-2">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl leading-[4.5rem]">
+                        <span class="block">Stop Losing
+                            <div class="rotating-text-wrapper">
+                                <div class="rotating-text-inner">
+                                    <span class="rotating-word text-teal-600">Missed Calls</span>
+                                    <span class="rotating-word text-teal-600">New Patients</span>
+                                    <span class="rotating-word text-teal-600">Production</span>
+                                    <span class="rotating-word text-teal-600">Missed Calls</span>
+                                </div>
+                            </div>
+                        </span>
+                        <span class="block text-3xl mt-4">Automate Your Front Desk.</span>
+                    </h1>
+
+                    <p class="mt-6 text-xl leading-8 text-gray-600 max-w-lg animate-fade-in stagger-2">
+                        Meet Sarah. She never takes a lunch break, handles Delta Dental verifications in seconds, and schedules patients directly into your PMS.
+                    </p>
+                </div>
+
+                <div class="hero-visual animate-slide-right lg:col-span-3">
+                    <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-100 min-h-[500px] flex flex-col justify-center items-center text-center">
+                        <i data-lucide="bot" class="w-16 h-16 text-teal-500 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">The "Sarah" Sandbox</h3>
+                        <p class="text-gray-500 mt-2 max-w-md">
+                            Test our AI Receptionist right here. Ask her to schedule a cleaning or check if we accept Cigna.
+                        </p>
+                        
+                        <div class="mt-8 p-4 border-2 border-dashed border-teal-300 rounded-lg w-full bg-teal-50 text-teal-700">
+                            [Insert Lippy AI Live Voice/Chat Widget Embed Code Here]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gray-50 py-24">
+        <div class="container mx-auto max-w-6xl px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover">
+                    <i data-lucide="phone-forwarded" class="w-10 h-10 text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Zero Missed Calls</h3>
+                    <p class="text-gray-600">When your staff is busy with a patient, Sarah answers by the second ring to capture new leads.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover">
+                    <i data-lucide="calendar-check" class="w-10 h-10 text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">PMS Integration</h3>
+                    <p class="text-gray-600">Sarah books directly into Dentrix, Open Dental, or Eaglesoft without double-booking.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 card-hover">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Insurance Fluent</h3>
+                    <p class="text-gray-600">Trained on complex PPO and HMO routing, filtering out out-of-network headaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
